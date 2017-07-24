@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.user.ui">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:process="com.example.user.myapplication.MainActivityDark"
+            android:name=".MainActivityDark"
+            android:label="Dark"
+            android:launchMode="singleInstance"
+            android:taskAffinity="com.example.user.myapplication.MainActivityDark"
+            android:theme="@style/Theme.AppCompat">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:process="com.example.user.myapplication.MainActivityLight"
+            android:name=".MainActivityLight"
+            android:label="Light"
+            android:launchMode="singleInstance"
+            android:taskAffinity="com.example.user.myapplication.MainActivityLight"
+            android:theme="@style/Theme.AppCompat.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:process="com.example.user.myapplication.MyContentProvider"
+            android:name="com.example.user.content.MyContentProvider"
+            android:authorities="com.example.user.content"
+            android:enabled="true"
+            android:exported="true">
+        </provider>
+    </application>
+
+</manifest>
